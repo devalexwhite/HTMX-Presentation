@@ -1,0 +1,17 @@
+name: htmx-presentation
+version: 0.1.0
+
+authors:
+  - Alex White alex@darnfinesoftware.com
+
+targets:
+  htmx-presentation:
+    main: src/htmx-presentation.cr
+
+crystal: '>= 1.12.1'
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal

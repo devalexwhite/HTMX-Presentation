@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Calculator - HTMX Version</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+
+<body>
+    <div id="calc">
+        <h1>Frontend Developers, Find Your Age in Human Years Using HTMX!</h1>
+        <div id="calc-result">
+
+        </div>
+        <form id="calc-form" 
+            hx-post="/api/age-calc-htmx" 
+            hx-swap="innerHTML" 
+            hx-target="#calc-result" 
+            hx-disabled-elt="#calc-form-submit" 
+            hx-indicator="#indicator">
+            <p>
+                <label>Your web developer age</label>
+                <input type="number" value="1" name="age"/>
+            </p>
+            <p>
+                <label>Are you a victim of React?</label>
+                <input type="checkbox" value="1" name="react_user"/>
+            </p>
+            <button type="submit" id="calc-form-submit">
+                Calculate!
+            </button>
+            <div id="indicator" class="htmx-indicator"><p>Loading...</p></div>
+        </form>
+    </div>
+</body>
+
+</html>
